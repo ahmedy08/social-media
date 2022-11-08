@@ -1,15 +1,18 @@
 <template>
-  <MainHeader/>
+  <div>
+    <Base/>
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
 import { defineComponent } from 'vue'
-import MainHeader from './components/MainHeader.vue'
+import Base from '@/pages/Base.vue'
 
 export default defineComponent({
   name: 'App',
   components: {
-    MainHeader
+    Base
   },
   setup() {
     return {}

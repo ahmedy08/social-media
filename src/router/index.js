@@ -3,12 +3,25 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
-const routes = [
+// const App = () => import('../App.vue')
+const Login = () => import('../pages/Login.vue')
 
+const routes = [
+    // {
+    //     path: '/',
+    //     name: 'App',
+    //     component: App
+    // },
+    {
+        path: '/login',
+        name: 'Login',
+        component: Login
+    }
 ]
 
 const router = new VueRouter({
-    routes
+    routes,
+    mode: 'history'
 })
 
 export default router
