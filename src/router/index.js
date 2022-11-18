@@ -3,19 +3,19 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
-// const App = () => import('../App.vue')
 const Login = () => import('../pages/Login.vue')
+const Home = () => import('../pages/Home.vue')
 
 const routes = [
-    // {
-    //     path: '/',
-    //     name: 'App',
-    //     component: App
-    // },
     {
-        path: '/login',
+        path: '/',
         name: 'Login',
         component: Login
+    },
+    {
+        path: '/home',
+        name: 'Home',
+        component: Home
     }
 ]
 
