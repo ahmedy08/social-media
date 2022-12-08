@@ -14,10 +14,21 @@
       </v-toolbar-items>
       <v-spacer></v-spacer>
       <v-toolbar-items class="px-4">
-        <v-btn text>Home</v-btn>
-        <v-btn text>Events</v-btn>
-        <v-btn text>Gallery</v-btn>
-        <v-btn text>Contact</v-btn>
+        <v-menu open-on-click>
+          <template v-slot:activator="{ on }">
+            <v-btn icon v-on="on">
+              <v-icon>mdi-account</v-icon>
+            </v-btn>
+          </template>
+          <v-list>
+            <v-list-item @click="goToProfile">
+             <v-list-item-title>Profile</v-list-item-title>
+            </v-list-item>
+            <v-list-item @click="logout">
+              <v-list-item-title>Logout</v-list-item-title>
+            </v-list-item>
+          </v-list>
+        </v-menu>
       </v-toolbar-items>
   </v-toolbar>
 </v-app>
@@ -33,8 +44,12 @@ export default defineComponent({
     const login = () => {
       router.push('/login')
     }
+    const goToProfile = () => {
+      router.push('/profile')
+    }
     return {
-      login
+      login,
+      goToProfile
     }
   },
 })
