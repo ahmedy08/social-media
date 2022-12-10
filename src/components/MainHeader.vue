@@ -1,7 +1,7 @@
 <template>
 <v-app class="h-80" style="background-color: blue !important">
   <v-toolbar style="height:80px !important;" dark color="#162130">
-     <v-toolbar-title>
+     <v-toolbar-title class="cursor-point" @click="goToHome">
         <v-img
           src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
           alt="Vuetify Logo"
@@ -47,9 +47,13 @@ export default defineComponent({
     const goToProfile = () => {
       router.push('/profile')
     }
+    const goToHome = () => {
+      router.push('/home')
+    }
     return {
       login,
-      goToProfile
+      goToProfile,
+      goToHome
     }
   },
 })
@@ -58,6 +62,9 @@ export default defineComponent({
 <style scoped>
 .h-80 {
   height: 80px !important;
+}
+.cursor-point {
+  cursor: pointer;
 }
 
 </style>
