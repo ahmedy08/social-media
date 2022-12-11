@@ -3,8 +3,12 @@
     fluid
     class="pa-0"
   >
+    <v-row>
+      <MainHeader/>
+    </v-row>
     <v-row
       class="pa-0"
+      style="margin-top: 100px"
       align="center"
       justify="center"
     >
@@ -32,12 +36,14 @@
 import { defineComponent } from 'vue'
 import Events from "@/components/Events";
 import ProfileCard from "@/components/InfoCard";
+import MainHeader from "@/components/MainHeader";
 
 export default defineComponent({
   name: 'HomeWrapper',
   components: {
     Events,
-    ProfileCard
+    ProfileCard,
+    MainHeader
   },
   setup() {
     return {}

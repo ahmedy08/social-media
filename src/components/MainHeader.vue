@@ -1,6 +1,6 @@
 <template>
-<v-app class="h-80" style="background-color: blue !important">
-  <v-toolbar style="height:80px !important;" dark color="#162130">
+<v-layout style="position:fixed; width: 100%; z-index: 9999 !important">
+  <v-toolbar height="80" dark color="#162130">
      <v-toolbar-title class="cursor-point" @click="goToHome">
         <v-img
           src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
@@ -9,10 +9,17 @@
           max-height="60"
         ></v-img>
       </v-toolbar-title>
-      <v-toolbar-items>
-
-      </v-toolbar-items>
-      <v-spacer></v-spacer>
+    <v-spacer/>
+        <v-text-field
+          v-model="search"
+          style="background-color: gray; width: 5vw;"
+          append-icon="mdi-magnify"
+          label="Search"
+          single-line
+          hide-details
+          rounded
+        />
+      <v-spacer/>
       <v-toolbar-items class="px-4">
         <v-menu open-on-click>
           <template v-slot:activator="{ on }">
@@ -31,7 +38,7 @@
         </v-menu>
       </v-toolbar-items>
   </v-toolbar>
-</v-app>
+</v-layout>
 </template>
 
 <script>
@@ -41,9 +48,6 @@ import router from "@/router";
 export default defineComponent({
   name: 'MainHeader',
   setup() {
-    const login = () => {
-      router.push('/login')
-    }
     const goToProfile = () => {
       router.push('/profile')
     }
@@ -51,7 +55,6 @@ export default defineComponent({
       router.push('/home')
     }
     return {
-      login,
       goToProfile,
       goToHome
     }
@@ -60,9 +63,6 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.h-80 {
-  height: 80px !important;
-}
 .cursor-point {
   cursor: pointer;
 }

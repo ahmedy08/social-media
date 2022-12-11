@@ -1,16 +1,15 @@
 <template>
-  <div>
-    <router-view to="/"></router-view>
-  </div>
+  <div>xx</div>
 </template>
 
 <script>
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: 'App',
-    setup() {
-    return {}
-  },
+  name: "EventDetails"
 })
 </script>
+
+<style scoped>
+
+</style>

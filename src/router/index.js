@@ -6,6 +6,7 @@ Vue.use(VueRouter)
 const Login = () => import('../pages/Login.vue')
 const Home = () => import('../pages/Home.vue')
 const Profile = () => import('../pages/Profile.vue')
+const EventDetails = () => import('../pages/EventDetails.vue')
 
 const routes = [
     {
@@ -22,6 +23,11 @@ const routes = [
         path: '/profile',
         name: 'Profile',
         component: Profile
+    },
+    {
+        path: '/event-details:id',
+        name: 'EventDetails',
+        component: EventDetails
     }
 ]
 
