@@ -7,6 +7,7 @@ const Login = () => import('../pages/Login.vue')
 const Home = () => import('../pages/Home.vue')
 const Profile = () => import('../pages/Profile.vue')
 const EventDetails = () => import('../pages/EventDetails.vue')
+const AddNewEvent = () => import('../pages/AddNewEvent.vue')
 
 const routes = [
     {
@@ -28,6 +29,11 @@ const routes = [
         path: '/event-details:id',
         name: 'EventDetails',
         component: EventDetails
+    },
+    {
+        path: '/add-new-event',
+        name: 'AddNewEvent',
+        component: AddNewEvent
     }
 ]
 

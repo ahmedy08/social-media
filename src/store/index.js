@@ -5,11 +5,16 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
     state: {
-        count: 0
+        isMainPage: true,
     },
     mutations: {
-        increment (state) {
-            state.count++
+        changeMainPage(state, payload) {
+            state.isMainPage = payload
+        }
+    },
+    getters: {
+        isMainPage(state) {
+            return state.isMainPage
         }
     }
 })

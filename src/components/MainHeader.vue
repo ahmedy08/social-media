@@ -12,6 +12,7 @@
     <v-spacer/>
         <v-text-field
           v-model="search"
+          v-if="isMainPage"
           style="background-color: gray; width: 5vw;"
           append-icon="mdi-magnify"
           label="Search"
@@ -20,6 +21,9 @@
           rounded
         />
       <v-spacer/>
+      <v-btn icon @click="addNewEvent">
+        <v-icon>mdi-plus</v-icon>
+      </v-btn>
       <v-toolbar-items class="px-4">
         <v-menu open-on-click>
           <template v-slot:activator="{ on }">
@@ -42,8 +46,9 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue'
+import { defineComponent, computed } from 'vue'
 import router from "@/router";
+import store from "@/store";
 
 export default defineComponent({
   name: 'MainHeader',
@@ -54,9 +59,18 @@ export default defineComponent({
     const goToHome = () => {
       router.push('/home')
     }
+    const isMainPage = computed(() => {
+      return store.getters.isMainPage
+    })
+    const addNewEvent = () => {
+      store.state.isMainPage = false
+      router.push('/add-new-event')
+    }
     return {
       goToProfile,
-      goToHome
+      goToHome,
+      isMainPage,
+      addNewEvent
     }
   },
 })
