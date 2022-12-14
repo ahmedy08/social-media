@@ -13,7 +13,7 @@
         <v-text-field
           v-model="search"
           v-if="isMainPage"
-          style="background-color: gray; width: 5vw;"
+          style="background-color: gray"
           append-icon="mdi-magnify"
           label="Search"
           single-line
@@ -31,7 +31,7 @@
               <v-icon>mdi-account</v-icon>
             </v-btn>
           </template>
-          <v-list>
+          <v-list class="mt-16 mr-1">
             <v-list-item @click="goToProfile">
              <v-list-item-title>Profile</v-list-item-title>
             </v-list-item>

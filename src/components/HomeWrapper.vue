@@ -8,7 +8,7 @@
     </v-row>
     <v-row
       class="pa-0"
-      style="margin-top: 100px"
+      style="margin-top: 120px"
       align="center"
       justify="center"
     >
@@ -34,7 +34,7 @@
 
 <script>
 import { defineComponent } from 'vue'
-import Events from "@/components/Events";
+import Events from "@/components/Events/Events";
 import ProfileCard from "@/components/InfoCard";
 import MainHeader from "@/components/MainHeader";
 

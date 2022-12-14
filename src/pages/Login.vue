@@ -4,9 +4,10 @@
       <v-container fluid fill-height>
         <v-row>
           <v-col cols="6">
-            <template style="background-color: transparent;">
+            <template>
               <v-img
-                style="margin: auto !important; border-radius: 10px"
+                class="ma-auto"
+                style=" border-radius: 7px"
                 src="https://cdn.dribbble.com/users/3897976/screenshots/7555548/media/c21f8071c3bfba17abf5272ba69d4db5.gif"
                 height="500"
                 width="500"
